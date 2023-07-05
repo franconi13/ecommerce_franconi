@@ -1,0 +1,62 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(prodotto)">
+    <div class="container p-3 bg-body-secondary rounded main centro mt-5 mb-5 rounded-5">
+        <h3 class="text-center">Inserimento prodotto</h3>
+
+        <div class="col-4 centroDue">
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Abbigliamento</label>
+            </div>
+
+            <label for="nomeProdotto" class="form-label pt-3">Nome prodotto</label>
+            <input type="text" class="form-control" name="nomeProdotto" id="nomeProdotto"
+                placeholder="Inserisci il nome" onclick="resetMex()" [(ngModel)]="prodotto.nomeProdotto">
+
+            <label for="codiceProdotto" class="form-label pt-3">Codice prodotto</label>
+            <input type="text" class="form-control" name="codiceProdotto" id="codiceProdotto"
+                placeholder="Inserisci il codice" onclick="resetMex()" [(ngModel)]="prodotto.codiceProdotto">
+
+            <div>
+                <label for="taglia" class="form-label pt-3">Taglia</label>
+                <select name="taglia" id="taglia" class="form-select" [(ngModel)]="prodotto.taglia">
+                    <option value="null" checked>Scegli...</option>
+                    <option value="xs">XS</option>
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                    <option value="xxl">XXL</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="colore" class="form-label pt-3">Colore</label>
+                <input type="text" class="form-control" name="colore" id="colore" placeholder="Inserisci il colore"
+                    onclick="resetMex()" [(ngModel)]="prodotto.colore">
+            </div>
+
+            <label for="categoria" class="form-label pt-3">Categoria</label>
+            <select name="categoria" id="categoria" class="form-select" [(ngModel)]="prodotto.nomeCategoria">
+                <option *ngFor="let c of categorie" [value]="c.nomeCategoria">
+                    {{ c.nomeCategoria }}
+                </option>
+            </select>
+
+            <label for="marca" class="form-label pt-3">Marca</label>
+            <select name="marca" id="marca" class="form-select" [(ngModel)]="prodotto.nomeMarca">
+                <option *ngFor="let m of marche" [value]="m.nomeMarca">
+                    {{ m.nomeMarca }}
+                </option>
+            </select>
+
+            <p>{{message}}</p>
+            <br>
+        </div>
+        <div class="login">
+          <button type="submit" class="btn btn-dark">Salva</button>
+          <button routerLink="" class="btn btn-dark">Torna alla tabella</button>
+      </div>
+
+    </div>
+    <br>
+</form>

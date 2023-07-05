@@ -1,0 +1,58 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+  <div class="container p-3 bg-body-secondary rounded main centro mt-5 mb-5 rounded-5">
+    <h3 class="text-center">Registrazione utente</h3>
+
+    <div *ngIf="token == 'Admin'">
+      <button class="btn btn-square btn-dark" routerLink="/insertForn">Registra Fornitore</button>
+    </div>
+
+    <button class="btn btn-dark" routerLink="/tabUsers">Torna alla tabella</button>
+
+    <div class="col-4 centroDue">
+      <label for="nome" class="form-label pt-3">Nome</label>
+      <input type="text" class="form-control" name="nome" id="nome" placeholder="Inserisci il nome"
+        onclick="resetMessage()" [(ngModel)]="utente.nome">
+
+      <label for="cognome" class="form-label pt-3">Cognome</label>
+      <input type="text" class="form-control" name="cognome" id="cognome" placeholder="Inserisci il cognome"
+        onclick="resetMessage()" [(ngModel)]="utente.cognome">
+
+      <label for="dataNascita" class="form-label pt-3">Data di nascita</label>
+      <input type="date" class="form-control" name="dataNascita" id="dataNascita" onclick="resetMessage()"
+        [(ngModel)]="utente.dataNascita">
+
+<!--       <label for="ruolo" class="form-label pt-3">Ruolo</label>
+      <select name="ruolo" id="ruolo" class="form-select" [(ngModel)]="ruolo.ruolo" required>
+        <option *ngFor="let r of ruoli" [value]="r.ruolo">
+          {{ r.ruolo }}
+        </option>
+      </select> -->
+
+
+      <label for="cf" class="form-label pt-3">Codice fiscale</label>
+      <input type="text" class="form-control" name="cf" id="cf" placeholder="Inserisci il codice fiscale"
+        onclick="resetMessage()" [(ngModel)]="utente.cf">
+
+      <label for="telefono" class="form-label pt-3">Telefono</label>
+      <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Inserisci il telefono"
+        onclick="resetMessage()" [(ngModel)]="utente.telefono">
+
+      <label for="username" class="form-label pt-3">Username</label>
+      <input type="text" class="form-control" name="username" id="username" placeholder="Inserisci l'username"
+        onclick="resetMessage()" [(ngModel)]="utente.username">
+
+      <label for="email" class="form-label pt-3">Email</label>
+      <input type="text" class="form-control" name="email" id="email" placeholder="Inserisci l'email"
+        onclick="resetMessage()" [(ngModel)]="utente.email">
+
+      <label for="password" class="form-label pt-3">Password</label>
+      <input type="password" class="form-control" name="password" id="password" placeholder="Inserisci la password"
+        onclick="resetMessage()" [(ngModel)]="utente.password">
+    </div>
+    <br>
+    <div>
+      <button type="submit" class="btn btn-dark">Registrati</button>
+    </div>
+
+  </div>
+</form>

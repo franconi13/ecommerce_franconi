@@ -1,0 +1,61 @@
+<div class="container p-3 bg-body-secondary rounded main mt-5 mb-5 rounded-5">
+
+  <div *ngIf="fornitori.length == 0">
+    <button routerLink="/insertForn" class="btn btn-dark">Inserisci fornitore</button>
+  </div>
+
+  <div class="inghiommato">
+    <button routerLink="/login" class="btn btn-dark">Logout</button>
+  </div>
+  <!-- <h3>Nessun utente inserito</h3> -->
+</div>
+
+<div class="container p-3 bg-body-secondary rounded main centro mt-5 mb-5 rounded-5" *ngIf="fornitori.length > 0">
+  <section class="container pb-5">
+      <button routerLink="/insertForn" class="btn btn-dark">Inserisci fornitore</button>
+      <h3 class="text-center my-4">Tabella fornitori</h3>
+      <div class="d-flex justify-content-center my-3">
+          <table border="1" class="table table-striped">
+              <thead class="bg-warning">
+                  <th class="text-dark">Id</th>
+                  <th class="text-dark">Nome azienda</th>
+                  <th class="text-dark">Codice fornitore</th>
+                  <th class="text-dark">Partita iva</th>
+                  <th class="text-dark">Codice fiscale</th>
+                  <th class="text-dark">Cellulare del fornitore</th>
+                  <th class="text-dark">Telefono aziendale</th>
+                  <th class="text-dark">PEC</th>
+                  <th class="text-dark">Codice di fatturazione</th>
+                  <th class="text-dark">Rimuovi</th>
+                  <th class="text-dark">Modifica</th>
+
+              </thead>
+              <tbody class="bg-dark">
+                  <tr *ngFor="let fornitore of fornitori">
+                      <td class="text-warning">{{fornitore.id}}</td>
+                      <td class="text-warning">{{fornitore.nomeAzienda}}</td>
+                      <td class="text-warning">{{fornitore.codiceFornitore}}</td>
+                      <td class="text-warning">{{fornitore.partitaIva}}</td>
+                      <td class="text-warning">{{fornitore.codiceFiscale}}</td>
+                      <td class="text-warning">{{fornitore.cellFornitore}}</td>
+                      <td class="text-warning">{{fornitore.telAziendale}}</td>
+                      <td class="text-warning">{{fornitore.pec}}</td>
+                      <td class="text-warning">{{fornitore.codiceFatturazione}}</td>
+                      <td><button (click)="deleteFornitore(fornitore)">Rimuovi</button></td>
+                      <td><button routerLink='/modifyForn/{{fornitore.id}}'>Modifica</button></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </section>
+
+<div class="d-flex justify-content-center my-3">
+  <a class="btn btn-outline-warning px-3 bg-dark" (click)="getFornitoriImpaginati(0)">First page</a>
+  <a class="btn btn-outline-warning px-3 bg-dark" (click)="getFornitoriImpaginati(page-1)">Previous</a>
+  <a class="btn btn-outline-dark px-3 bg-warning">Pagina {{page+1}}</a>
+  <a class="btn btn-outline-warning px-3 bg-dark" (click)="getFornitoriImpaginati(page+1)">Next</a>
+  <a class="btn btn-outline-warning px-3 bg-dark" (click)="getFornitoriImpaginati(nPagine)">Last page</a>
+</div>
+
+</div>
+<br>

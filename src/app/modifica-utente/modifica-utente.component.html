@@ -1,0 +1,58 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(utente)">
+  <div class="container p-3 bg-body-secondary rounded main centro mt-5 mb-5 rounded-5">
+    <h3 class="text-center">Modifica utente</h3>
+
+
+
+    <div class="col-4 centroDue">
+      <label for="nome" class="form-label pt-3">Nome</label>
+      <input type="text" class="form-control" name="nome" id="nome" placeholder="Inserisci il nome"
+        onclick="resetMessage()" [(ngModel)]="utente.nome">
+
+      <label for="cognome" class="form-label pt-3">Cognome</label>
+      <input type="text" class="form-control" name="cognome" id="cognome" placeholder="Inserisci il cognome"
+        onclick="resetMessage()" [(ngModel)]="utente.cognome">
+
+      <label for="dataNascita" class="form-label pt-3">Data di nascita</label>
+      <input type="date" class="form-control" name="dataNascita" id="dataNascita" onclick="resetMessage()"
+        [(ngModel)]="utente.dataNascita">
+
+      <label for="ruolo" class="form-label pt-3">Ruolo</label>
+      <select name="ruolo" id="ruolo" class="form-select" [(ngModel)]="utente.nomeRuolo">
+        <option *ngFor="let r of ruoli" [value]="r.nomeRuolo" checked>
+          {{ r.nomeRuolo }}
+        </option>
+      </select>
+
+      <label for="codiceUtente" class="form-label pt-3"></label>
+      <input type="hidden" class="form-control" name="codiceUtente" id="codiceUtente" onclick="resetMessage()"
+        [(ngModel)]="utente.codiceUtente" [value]="utente.codiceUtente">
+
+      <label for="cf" class="form-label pt-3">Codice fiscale</label>
+      <input type="text" class="form-control" name="cf" id="cf" placeholder="Inserisci il codice fiscale"
+        onclick="resetMessage()" [(ngModel)]="utente.cf">
+
+      <label for="telefono" class="form-label pt-3">Telefono</label>
+      <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Inserisci il telefono"
+        onclick="resetMessage()" [(ngModel)]="utente.telefono">
+
+      <label for="email" class="form-label pt-3">Email</label>
+      <input type="text" class="form-control" name="email" id="email" placeholder="Inserisci l'email"
+        onclick="resetMessage()" [(ngModel)]="utente.email">
+
+      <label for="username" class="form-label pt-3">Username</label>
+      <input type="text" class="form-control" name="username" id="username" placeholder="Inserisci l'username"
+        onclick="resetMessage()" [(ngModel)]="utente.username">
+
+      <label for="password" class="form-label pt-3">Password</label>
+      <input type="password" class="form-control" name="password" id="password" placeholder="Inserisci la password"
+        onclick="resetMessage()" [(ngModel)]="utente.password">
+
+    </div>
+    <br>
+    <div>
+      <button type="submit" class="btn btn-dark">Modifica</button>
+    </div>
+
+  </div>
+</form>

@@ -1,0 +1,23 @@
+<form #form="ngForm" (ngSubmit)="onFormSubmit()">
+  <div class="container p-3 bg-body-secondary rounded main centro mt-5 mb-5 rounded-5">
+    <div class="login">
+      <h2>Login</h2>
+      <!-- <button class="btn btn-square btn-dark" routerLink="/insertUtente">Registrati</button> -->
+    </div>
+
+    <div class="col-4 centroDue">
+      <label for="username" class="form-label pt-3">Username</label>
+      <input type="text" class="form-control" name="username" id="username" [(ngModel)]="account.username"
+        (click)="resetMessage()" placeholder="Inserisci l'username">
+
+      <label for="password" class="form-label pt-3">Password</label>
+      <input type="password" class="form-control" name="password" id="password" [(ngModel)]="account.password"
+      (click)="resetMessage()" placeholder="Inserisci la password">
+    </div>
+    <br>
+    <div>
+      <button type="submit" class="btn btn-dark">Accedi</button>
+    </div>
+
+  </div>
+</form>

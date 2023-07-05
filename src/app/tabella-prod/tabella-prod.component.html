@@ -1,0 +1,47 @@
+<div *ngIf="prodotti.length == 0" class="container p-3 bg-body-secondary rounded main centro mt-5 mb-5 rounded-5">
+    <button routerLink="/insert" class="btn btn-dark">Inserisci prodotto</button>
+    <h3>Nessun prodotto inserito</h3>
+</div>
+
+<div class="container p-3 bg-body-secondary rounded main centro mt-5 mb-5 rounded-5" *ngIf="prodotti.length > 0">
+    <section class="container pb-5">
+        <button routerLink="/insert" class="btn btn-dark">Inserisci prodotto</button>
+        <h3 class="text-center my-4">Tabella dei prodotti</h3>
+        <div class="d-flex justify-content-center my-3">
+            <table border="1" class="table table-striped">
+                <thead class="bg-warning">
+                    <th class="text-dark">Id</th>
+                    <th class="text-dark">Nome prodotto</th>
+                    <th class="text-dark">Codice prodotto</th>
+                    <th class="text-dark">Taglia</th>
+                    <th class="text-dark">Colore</th>
+                    <th class="text-dark">Nome categoria</th>
+                    <th class="text-dark">Nome marca</th>
+                    <th class="text-dark">Rimuovi</th>
+                    <th class="text-dark">Modifica</th>
+
+                </thead>
+                <tbody class="bg-dark">
+                    <tr *ngFor="let prodotto of prodotti">
+                        <td class="text-warning">{{prodotto.id}}</td>
+                        <td class="text-warning">{{prodotto.nomeProdotto}}</td>
+                        <td class="text-warning">{{prodotto.codiceProdotto}}</td>
+                        <td class="text-warning">{{prodotto.taglia}}</td>
+                        <td class="text-warning">{{prodotto.colore}}</td>
+                        <td class="text-warning">{{prodotto.nomeCategoria}}</td>
+                        <td class="text-warning">{{prodotto.nomeMarca}}</td>
+                        <td><button (click)="deleteProdotto(prodotto)">Rimuovi</button></td>
+                        <td><button routerLink='/modify/{{prodotto.id}}'>Modifica</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <div class="d-flex justify-content-center my-3">
+      <a class="btn btn-outline-warning px-3 bg-dark" (click)="getProductsPaged(0)">First page</a>
+      <a class="btn btn-outline-warning px-3 bg-dark" (click)="getProductsPaged(page-1)">Previous</a>
+      <a class="btn btn-outline-dark px-3 bg-warning">Pagina {{page+1}}</a>
+      <a class="btn btn-outline-warning px-3 bg-dark" (click)="getProductsPaged(page+1)">Next</a>
+      <a class="btn btn-outline-warning px-3 bg-dark" (click)="getProductsPaged(nPagine)">Last page</a>
+</div>
+<br>

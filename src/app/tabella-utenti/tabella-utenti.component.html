@@ -1,0 +1,86 @@
+<div class="container p-3 bg-body-secondary rounded main mt-5 mb-5 rounded-5">
+
+  <div *ngIf="utenti.length == 0">
+    <button routerLink="/insertUtente" class="btn btn-dark">Inserisci utente</button>
+  </div>
+
+  <div class="inghiommato">
+    <button routerLink="/login" class="btn btn-dark">Logout</button>
+  </div>
+  <!-- <h3>Nessun utente inserito</h3> -->
+</div>
+
+
+
+
+
+<div class="container p-3 bg-body-secondary rounded main centro mt-5 mb-5 rounded-5" *ngIf="utenti.length > 0">
+  <section class="container pb-5">
+
+    <div *ngIf="token == 'Admin'">
+      <button routerLink="/insertUtente" class="btn btn-dark">Inserisci utente</button>
+    </div>
+
+
+
+    <h3 class="text-center my-4">Tabella utenti</h3>
+    <div class="d-flex justify-content-center my-3">
+      <table border="1" class="table table-striped">
+        <tr class="bg-warning">
+          <th class="text-dark">Id</th>
+          <th class="text-dark">Nome</th>
+          <th class="text-dark">Cognome</th>
+          <th class="text-dark">Codice Fiscale</th>
+          <th class="text-dark">Data di Nascita</th>
+          <th class="text-dark">Email</th>
+          <th class="text-dark">Telefono</th>
+          <th class="text-dark">Codice Utente</th>
+          <th class="text-dark" *ngIf="token=='Admin'">
+            Ruolo
+          </th>
+          <th class="text-dark">Username</th>
+          <th class="text-dark">Modifica</th>
+          <th class="text-dark">Rimuovi</th>
+
+        </tr>
+        <tr class="bg-dark">
+        <tr *ngFor="let utente of utenti">
+          <td class="text-warning">{{utente.id}}</td>
+          <td class="text-warning">{{utente.nome}}</td>
+          <td class="text-warning">{{utente.cognome}}</td>
+          <td class="text-warning">{{utente.cf}}</td>
+          <td class="text-warning">{{utente.dataNascita}}</td>
+          <td class="text-warning">{{utente.email}}</td>
+          <td class="text-warning">{{utente.telefono}}</td>
+          <td class="text-warning">{{utente.codiceUtente}}</td>
+          <td class="text-warning" *ngIf="token == 'Admin'">
+            {{utente.nomeRuolo}}
+          </td>
+          <td class="text-warning">{{utente.username}}</td>
+          <td *ngIf="token == 'Admin'">
+            <button class="btn btn-warning" routerLink='/modifyUser/{{utente.id}}'>
+              Modifica
+            </button>
+          </td>
+          <td *ngIf="token != 'Admin'">Accesso negato!</td>
+          <td *ngIf="token == 'Admin'">
+            <button class="btn btn-danger" (click)="deleteUtente(utente)">
+              Cancella
+            </button>
+          </td>
+          <td *ngIf="token != 'Admin'">Accesso negato!</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <div class="d-flex justify-content-center my-3">
+    <a class="btn btn-outline-warning px-3 bg-dark" (click)="getUsersPage(0)">First page</a>
+    <a class="btn btn-outline-warning px-3 bg-dark" (click)="getUsersPage(page-1)">Previous</a>
+    <a class="btn btn-outline-dark px-3 bg-warning">Pagina {{page+1}}</a>
+    <a class="btn btn-outline-warning px-3 bg-dark" (click)="getUsersPage(page+1)">Next</a>
+    <a class="btn btn-outline-warning px-3 bg-dark" (click)="getUsersPage(nPagine)">Last page</a>
+  </div>
+
+</div>
+<br>
