@@ -7,15 +7,21 @@ input::-webkit-inner-spin-button {
 .centro {
   margin: 0 auto;
   text-align: center;
-  width: 30%;
+  width: 70%;
   padding: 30px;
 }
 
 .centroDue {
-  margin: 0 auto;
   width: 55%;
+  justify-content: center;
   text-align: left;
 }
+
 .centroTre{
   text-align: center;
+}
+
+.login {
+  margin: 0 auto;
+  width: 80%;
 }

@@ -18,6 +18,8 @@ import { TabellaUtentiComponent } from './tabella-utenti/tabella-utenti.componen
 import { TabellaFornitoriComponent } from './tabella-fornitori/tabella-fornitori.component';
 import { FormProdottoMagazzinoComponent } from './form-prodotto-magazzino/form-prodotto-magazzino.component';
 import { TabellaProdottoMagazzinoComponent } from './tabella-prodotto-magazzino/tabella-prodotto-magazzino.component';
+import { FormMarcaComponent } from './form-marca/form-marca.component';
+import { FormCategoriaComponent } from './form-categoria/form-categoria.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { TabellaProdottoMagazzinoComponent } from './tabella-prodotto-magazzino/
     TabellaFornitoriComponent,
     FormProdottoMagazzinoComponent,
     TabellaProdottoMagazzinoComponent,
+    FormMarcaComponent,
+    FormCategoriaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [CrudService],

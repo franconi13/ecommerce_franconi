@@ -1,5 +1,11 @@
 <div class="centroTre">
-  <img src="/assets/images/LogoSito.png" alt="logo" width="70px" style="margin-left: 10px;" type="button" routerLink="/home-page">
+  <div class="d-inline-flex">
+    <img src="/assets/images/LogoSito.png" alt="logo" width="70px" type="button" routerLink="">
+  </div>
+  <div class="d-inline-flex float-end mt-3 mx-3">
+    <button routerLink="/login" class="btn btn-outline-dark">Logout</button>
+  </div>
+
 </div>
 
 <div class="container p-3 bg-body-secondary rounded main mt-5 mb-5 rounded-5">
@@ -8,10 +14,8 @@
     <button routerLink="/insertUtente" class="btn btn-dark">Inserisci utente</button>
   </div>
 
-  <div class="inghiommato">
-    <button routerLink="/login" class="btn btn-dark">Logout</button>
-  </div>
-  <!-- <h3>Nessun utente inserito</h3> -->
+
+  <h3 *ngIf="utenti.length==0">Nessun utente inserito</h3>
 </div>
 
 
@@ -61,18 +65,30 @@
             {{utente.nomeRuolo}}
           </td>
           <td class="text-warning">{{utente.username}}</td>
+
           <td *ngIf="token == 'Admin'">
             <button class="btn btn-warning" routerLink='/modifyUser/{{utente.id}}'>
               Modifica
             </button>
           </td>
-          <td *ngIf="token != 'Admin'">Accesso negato!</td>
+
+          <td *ngIf="token != 'Admin'">
+            <button class="btn btn-warning" routerLink='/modifyUser/{{utente.id}}' disabled>
+              Modifica
+            </button>
+          </td>
+
           <td *ngIf="token == 'Admin'">
-            <button class="btn btn-danger" (click)="deleteUtente(utente)">
+            <button class="btn btn-danger" (click)="deleteUtente(utente)" class="btn btn-outline-danger">
               Cancella
             </button>
           </td>
-          <td *ngIf="token != 'Admin'">Accesso negato!</td>
+
+          <td *ngIf="token != 'Admin'">
+            <button class="btn btn-danger" (click)="deleteUtente(utente)" class="btn btn-outline-danger" disabled>
+              Cancella
+            </button>
+          </td>
         </tr>
       </table>
     </div>

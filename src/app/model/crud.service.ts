@@ -42,6 +42,30 @@ export class CrudService {
     );
   }
 
+  addMarca(marca: Marca): Observable<string> {
+    return this.http.post<string>(`${this.uri}/upsertMarca`, marca)
+  }
+
+  getMarca(id:number): Observable<Marca>{
+    return this.http.get<Marca>(`${this.uri}/getMarca`)
+  }
+
+  deleteMarca(id:number): Observable<string>{
+    return this.http.delete<string>(`${this.uri}/deleteMarca/${id}`)
+  }
+
+  addCategoria(categoria: Categoria): Observable<string> {
+    return this.http.post<string>(`${this.uri}/upsertMarca`, categoria)
+  }
+
+  getCategoria(id:number): Observable<Marca>{
+    return this.http.get<Marca>(`${this.uri}/getCategoria`)
+  }
+
+  deleteCategoria(id:number): Observable<string>{
+    return this.http.delete<string>(`${this.uri}/deleteCategoria/${id}`)
+  }
+
   getCategorie(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>(`${this.uri}/getCategorie`);
   }

@@ -3,6 +3,7 @@ import { Prodotto } from '../model/prodotto';
 import { CrudService } from '../model/crud.service';
 import { Categoria } from '../model/categoria';
 import { Marca } from '../model/marca';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-prodotto',
   templateUrl: './prodotto.component.html',
@@ -14,7 +15,7 @@ export class ProdottoComponent implements OnInit {
   marche: Marca[] = [];
   message!: string;
 
-  constructor(private crud: CrudService) {}
+  constructor(private crud: CrudService, private router: Router) {}
 
   checked = false;
   toggleChecked() {
@@ -45,6 +46,7 @@ export class ProdottoComponent implements OnInit {
 
   onSubmit(): void {
     this.addProdotto(this.prodotto);
+    this.router.navigate(['tab']);
     this.prodotto = new Prodotto(); //svuota i campi del form e crea nello stesso tempo una nuova istanza
   }
 

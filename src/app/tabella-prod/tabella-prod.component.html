@@ -1,5 +1,5 @@
 <div class="centroTre">
-  <img src="/assets/images/LogoSito.png" alt="logo" width="70px" style="margin-left: 10px;" type="button" routerLink="/home-page">
+  <img src="/assets/images/LogoSito.png" alt="logo" width="70px" style="margin-left: 10px;" type="button" routerLink="">
 </div>
 
 <div *ngIf="prodotti.length == 0" class="container p-3 bg-body-secondary rounded main centro mt-5 mb-5 rounded-5">
@@ -34,8 +34,8 @@
                         <td class="text-warning">{{prodotto.colore}}</td>
                         <td class="text-warning">{{prodotto.nomeCategoria}}</td>
                         <td class="text-warning">{{prodotto.nomeMarca}}</td>
-                        <td><button (click)="deleteProdotto(prodotto)">Rimuovi</button></td>
-                        <td><button routerLink='/modify/{{prodotto.id}}'>Modifica</button></td>
+                        <td><button (click)="deleteProdotto(prodotto)" class="btn btn-outline-danger">Rimuovi</button></td>
+                        <td><button routerLink='/modify/{{prodotto.id}}' class="btn btn-dark">Modifica</button></td>
                     </tr>
                 </tbody>
             </table>

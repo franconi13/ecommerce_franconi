@@ -6,8 +6,8 @@ input::-webkit-inner-spin-button {
 
 .centro {
   margin: 0 auto;
-  width: 30%;
   text-align: center;
+  width: 60%;
   padding: 30px;
 }
 
@@ -18,9 +18,8 @@ input::-webkit-inner-spin-button {
 }
 
 .login {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .btn-square {
@@ -33,6 +32,13 @@ input::-webkit-inner-spin-button {
   margin: 4px 2px;
   border-radius: 20px;
 }
+
 .centroTre{
   text-align: center;
+}
+
+.centroDue {
+  width: 55%;
+  justify-content: center;
+  text-align: left;
 }

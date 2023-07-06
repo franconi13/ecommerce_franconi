@@ -1,53 +1,62 @@
-<div class="centroTre">
-  <img src="/assets/images/LogoSito.png" alt="logo" width="70px" style="margin-left: 10px;" type="button" routerLink="/home-page">
-</div>
-
-
 <form #form="ngForm" (ngSubmit)="onSubmit()">
   <div class="container p-3 mt-4 bg-body-secondary rounded main centro">
-
     <h3 class="text-center">Registrazione Fornitore</h3>
 
-    <br>
-    <div class="col-4 centroDue">
-      <label for="nomeAzienda" class="form-label">Nome Azienda</label>
-      <input type="text" class="form-control" name="nomeAzienda" id="nomeAzienda" placeholder="Nome Azienda"
-        onclick="resetMessage()" [(ngModel)]="fornitore.nomeAzienda">
+    <br/>
+    <div class="container">
+      <div class="row">
+        <div class="w-100"></div>
+        <div class="col">
+          <label for="nomeAzienda" class="form-label">Nome Azienda</label>
+          <input type="text" class="form-control" name="nomeAzienda" id="nomeAzienda" placeholder="Nome Azienda"
+            onclick="resetMessage()" [(ngModel)]="fornitore.nomeAzienda" />
 
-      <label for="partitaIva" class="form-label">Partita Iva</label>
-      <input type="text" class="form-control" name="partitaIva" id="partitaIva" placeholder="Partita IVA"
-        onclick="resetMessage()" [(ngModel)]="fornitore.partitaIva">
-      <br>
-
-      <label for="codiceFiscale" class="form-label">Codice fiscale</label>
-      <input type="text" class="form-control" name="codiceFiscale" id="codiceFiscale" placeholder="Codice Fiscale"
-        onclick="resetMessage()" [(ngModel)]="fornitore.codiceFiscale">
-      <br>
-
-      <label for="cellFornitore" class="form-label">Cellulare del fornitore</label>
-      <input type="text" class="form-control" name="cellFornitore" id="cellFornitore"
-        placeholder="Cellulare del fornitore" onclick="resetMessage()" [(ngModel)]="fornitore.cellFornitore">
-      <br>
-
-      <label for="telAziendale" class="form-label">Telefono Aziendale</label>
-      <input type="text" class="form-control" name="telAziendale" id="telAziendale" placeholder="Telefono Aziendale"
-        onclick="resetMessage()" [(ngModel)]="fornitore.telAziendale">
-      <br>
-
-      <label for="pec" class="form-label">PEC</label>
-      <input type="text" class="form-control" name="pec" id="pec" placeholder="Pec" onclick="resetMessage()"
-        [(ngModel)]="fornitore.pec">
-
-      <label for="codiceFatturazione" class="form-label">Codice di fatturazione</label>
-      <input type="text" class="form-control" name="codiceFatturazione" id="codiceFatturazione"
-        placeholder="Codice di fatturazione" onclick="resetMessage()" [(ngModel)]="fornitore.codiceFatturazione">
-
+        </div>
+        <br>
+        <div class="col">
+          <label for="codiceFornitore" class="form-label">Codice Fornitore</label>
+          <input type="text" class="form-control" name="codiceFornitore" id="codiceFornitore"
+            placeholder="Codice Fornitore" onclick="resetMessage()" [(ngModel)]="fornitore.codiceFornitore" />
+        </div>
+      </div>
     </div>
     <br>
 
-    <div>
-      <button type="submit" class="btn btn-dark">Registrati</button>
+    <div class="container">
+      <div class="row">
+        <div class="w-100"></div>
+        <div class="col">
+          <label for="partitaIva" class="form-label">Partita Iva</label>
+          <input type="text" class="form-control" name="partitaIva" id="partitaIva" placeholder="Partita IVA"
+            onclick="resetMessage()" [(ngModel)]="fornitore.partitaIva" />
+
+        </div>
+        <div class="col">
+          <label for="codiceFiscale" class="form-label">Codice fiscale</label>
+          <input type="text" class="form-control" name="codiceFiscale" id="codiceFiscale" placeholder="Codice Fiscale"
+            onclick="resetMessage()" [(ngModel)]="fornitore.codiceFiscale" />
+          <br>
+        </div>
+      </div>
     </div>
 
+    <div class="container">
+      <div class="row">
+        <div class="w-100"></div>
+        <div class="col">
+          <label for="telAziendale" class="form-label">Telefono Aziendale</label>
+          <input type="number" class="form-control" name="telAziendale" id="telAziendale"
+            placeholder="Telefono Aziendale" onclick="resetMessage()" [(ngModel)]="fornitore.telAziendale" />
+          <br />
+        </div>
+        <div class="col">
+          <label for="pec" class="form-label">PEC</label>
+          <input type="text" class="form-control" name="pec" id="pec" placeholder="Pec" onclick="resetMessage()"
+            [(ngModel)]="fornitore.pec"/>
+        </div>
+        <br />
+      </div>
+    </div>
+    <button type="submit" class="btn btn-dark">Salva</button>
   </div>
 </form>

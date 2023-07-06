@@ -3,7 +3,7 @@ import { Categoria } from '../model/categoria';
 import { Marca } from '../model/marca';
 import { CrudService } from '../model/crud.service';
 import { Prodotto } from '../model/prodotto';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-modifica-prod',
   templateUrl: './modifica-prod.component.html',
@@ -18,7 +18,8 @@ export class ModificaProdComponent implements OnInit {
 
   constructor(
     private crud: CrudService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -48,5 +49,7 @@ export class ModificaProdComponent implements OnInit {
     this.crud.addProduct(this.prodotto).subscribe((message: string) => {
       this.message = message;
     });
+    this.router.navigate(['tab']);
   }
+
 }

@@ -19,12 +19,12 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "tab", component: TabellaProdComponent },
   { path: "insert", component: ProdottoComponent },
-  { path: "", component: HomeComponent },
   { path: "modify/:id", component: ModificaProdComponent },
   { path: "insertUtente", component:FormUtenteComponent },
   { path: "insertForn", component:FormFornitoreComponent},
   { path: "tabUsers", component:TabellaUtentiComponent},
-  { path: "tabForn", component:TabellaFornitoriComponent}
+  { path: "tabForn", component:TabellaFornitoriComponent},
+  { path: "", component:HomeComponent}
 ];
 
 @NgModule({

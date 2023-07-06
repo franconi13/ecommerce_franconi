@@ -1,5 +1,23 @@
-.cerca {
-  width: 80%;
+.barraCerca {
+  position:-ms-page;
+  width: 76%;
+  padding-left: 600px;
 }
 
+.logo {
+  width: 10%;
+}
+
+.bottoniT {
+  padding-right: 150px;
+  width: 10%;
+  margin-right: 50px;
+}
+
+.img > li{
+  width: 30%;
+  height: 300px;
+  display: inline-block;
+  background-color: black;
+}
 
