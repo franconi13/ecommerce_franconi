@@ -24,9 +24,9 @@
         </option>
       </select>
 
-      <label for="codiceUtente" class="form-label pt-3"></label>
-      <input type="hidden" class="form-control" name="codiceUtente" id="codiceUtente" onclick="resetMessage()"
-        [(ngModel)]="utente.codiceUtente" [value]="utente.codiceUtente">
+      <label for="codiceUtente" class="form-label pt-3">Codice utente</label>
+      <input type="text" class="form-control" name="codiceUtente" id="codiceUtente" onclick="resetMessage()"
+        [(ngModel)]="utente.codiceUtente" [value]="utente.codiceUtente" readonly>
 
       <label for="cf" class="form-label pt-3">Codice fiscale</label>
       <input type="text" class="form-control" name="cf" id="cf" placeholder="Inserisci il codice fiscale"
