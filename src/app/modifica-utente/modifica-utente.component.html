@@ -1,3 +1,7 @@
+<div class="centroTre">
+  <img src="/assets/images/LogoSito.png" alt="logo" width="70px" style="margin-left: 10px;" type="button" routerLink="/home-page">
+</div>
+
 <form #form="ngForm" (ngSubmit)="onSubmit(utente)">
   <div class="container p-3 bg-body-secondary rounded main centro mt-5 mb-5 rounded-5">
     <h3 class="text-center">Modifica utente</h3>
@@ -24,9 +28,9 @@
         </option>
       </select>
 
-      <label for="codiceUtente" class="form-label pt-3">Codice utente</label>
-      <input type="text" class="form-control" name="codiceUtente" id="codiceUtente" onclick="resetMessage()"
-        [(ngModel)]="utente.codiceUtente" [value]="utente.codiceUtente" readonly>
+      <label for="codiceUtente" class="form-label pt-3"></label>
+      <input type="hidden" class="form-control" name="codiceUtente" id="codiceUtente" onclick="resetMessage()"
+        [(ngModel)]="utente.codiceUtente" [value]="utente.codiceUtente">
 
       <label for="cf" class="form-label pt-3">Codice fiscale</label>
       <input type="text" class="form-control" name="cf" id="cf" placeholder="Inserisci il codice fiscale"
