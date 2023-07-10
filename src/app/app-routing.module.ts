@@ -12,6 +12,7 @@ import { TabellaUtentiComponent } from "./tabella-utenti/tabella-utenti.componen
 import { TabellaFornitoriComponent } from "./tabella-fornitori/tabella-fornitori.component";
 import { ModificaFornitoreComponent } from "./modifica-fornitore/modifica-fornitore.component";
 import { RouteGuardService } from "./route-guard.service";
+import { FormMarcaComponent } from "./form-marca/form-marca.component";
 
 const routes: Routes = [
   { path: "modifyUser/:id", component: ModificaUtenteComponent },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: "insertForn", component:FormFornitoreComponent},
   { path: "tabUsers", component:TabellaUtentiComponent},
   { path: "tabForn", component:TabellaFornitoriComponent},
-  { path: "", component:HomeComponent}
+  { path: "", component:HomeComponent},
+  {path: "marca" , component:FormMarcaComponent}
 ];
 
 @NgModule({
