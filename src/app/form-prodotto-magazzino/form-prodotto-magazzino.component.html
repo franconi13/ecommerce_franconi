@@ -2,3 +2,41 @@
   <img src="/assets/images/LogoSito.png" alt="logo" width="70px" style="margin-left: 10px;" type="button" routerLink="">
 </div>
 
+<div class="centroTre">
+  <img src="/assets/images/LogoSito.png" alt="logo" width="70px" style="margin-left: 10px;" type="button" routerLink="">
+</div>
+
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+  <div class="container p-3 bg-body-secondary rounded main centro mt-5 mb-5 rounded-5">
+    <h3 class="text-center">Inserisci Prodotto</h3>
+
+
+    <div class="col-4 centroDue">
+      <label for="dataMovimento" class="form-label pt-3">Data Movimento</label>
+      <input type="date" class="form-control" name="dataMovimento" id="dataMovimento" placeholder="Data Movimento"
+        onclick="resetMessage()" [(ngModel)]="prodottoMagazzino.dataMovimento">
+
+      <label for="tipoMovimento" class="form-label pt-3">Tipo Movimento</label>
+      <input type="text" class="form-control" name="tipoMovimento" id="tipoMovimento" placeholder="Tipo Movimento"
+        onclick="resetMessage()" [(ngModel)]="prodottoMagazzino.tipoMovimento">
+
+      <label for="prezzoAquisto" class="form-label pt-3">Prezzo di Aquisto</label>
+      <input type="number" class="form-control" name="prezzoAquisto" id="prezzoAquisto" onclick="resetMessage()"
+        [(ngModel)]="prodottoMagazzino.prezzoAcquisto">
+
+      <label for="prezzoVendita" class="form-label pt-3">Prezzo di Vendita</label>
+      <input type="number" class="form-control" name="prezzoVendita" id="prezzoVendita" onclick="resetMessage()"
+        [(ngModel)]="prodottoMagazzino.prezzoVendita">
+
+      <label for="quantita" class="form-label pt-3">Quantita</label>
+      <input type="text" class="form-control" name="quantita" id="quantita" onclick="resetMessage()"
+        [(ngModel)]="prodottoMagazzino.quantita">
+
+    </div>
+    <br>
+    <div>
+      <button type="submit" class="btn btn-dark">Inserisci</button>
+    </div>
+
+  </div>
+</form>
