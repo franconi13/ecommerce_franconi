@@ -1,0 +1,27 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.centro {
+  margin: 0 auto;
+  text-align: center;
+  width: 70%;
+  padding: 30px;
+}
+
+.centroDue {
+  width: 55%;
+  justify-content: center;
+  text-align: left;
+}
+
+.centroTre{
+  text-align: center;
+}
+
+.login {
+  margin: 0 auto;
+  width: 80%;
+}

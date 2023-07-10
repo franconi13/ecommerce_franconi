@@ -27,4 +27,8 @@ export class FormCategoriaComponent implements OnInit{
     this.categoria = new Categoria();
   }
 
+  resetMessage(): void{
+    this.message = "";
+  }
+
 }

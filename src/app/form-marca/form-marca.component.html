@@ -1,11 +1,11 @@
 <form #form="ngForm" (ngSubmit)="onSubmit()">
   <div class="container p-3 mt-4 bg-body-secondary rounded main centro">
-    <h3 class="text-center">Registrazione Marca</h3>
+    <h3 class="text-center">Registrazione marca</h3>
 
-    <br/>
-          <label for="nomeMarca" class="form-label">Nome Marca</label>
-          <input type="text" class="form-control" name="nomeMarca" id="nomeMarca" placeholder="Nome Marca"
-            onclick="resetMessage()" [(ngModel)]="marca.nomeMarca" />
-            <br>
-            <button type="submit" class="btn btn-dark">Salva</button>
-        </div>
+    <br />
+    <label for="nomeMarca" class="form-label">Marca</label>
+    <input type="text" class="form-control" name="nomeMarca" id="nomeMarca" placeholder="Inserisci la marca"
+      onclick="resetMessage()" [(ngModel)]="marca.nomeMarca" />
+    <br>
+    <button type="submit" class="btn btn-dark">Salva</button>
+  </div>

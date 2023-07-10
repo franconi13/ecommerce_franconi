@@ -25,5 +25,8 @@ export class FormMarcaComponent implements OnInit{
     this.aggiungiMarca(this.marca);
     this.marca = new Marca();
   }
+  resetMessage(): void{
+    this.message = "";
+  }
 
 }

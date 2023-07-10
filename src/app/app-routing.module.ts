@@ -13,24 +13,26 @@ import { TabellaFornitoriComponent } from "./tabella-fornitori/tabella-fornitori
 import { ModificaFornitoreComponent } from "./modifica-fornitore/modifica-fornitore.component";
 import { RouteGuardService } from "./route-guard.service";
 import { FormMarcaComponent } from "./form-marca/form-marca.component";
+import { FormCategoriaComponent } from "./form-categoria/form-categoria.component";
 
 const routes: Routes = [
   { path: "modifyUser/:id", component: ModificaUtenteComponent },
-  { path: "modifyForn/:id", component: ModificaFornitoreComponent},
+  { path: "modifyForn/:id", component: ModificaFornitoreComponent },
   { path: "login", component: LoginComponent },
   { path: "tab", component: TabellaProdComponent },
   { path: "insert", component: ProdottoComponent },
   { path: "modify/:id", component: ModificaProdComponent },
-  { path: "insertUtente", component:FormUtenteComponent },
-  { path: "insertForn", component:FormFornitoreComponent},
-  { path: "tabUsers", component:TabellaUtentiComponent},
-  { path: "tabForn", component:TabellaFornitoriComponent},
-  { path: "", component:HomeComponent},
-  {path: "marca" , component:FormMarcaComponent}
+  { path: "insertUtente", component: FormUtenteComponent },
+  { path: "insertForn", component: FormFornitoreComponent },
+  { path: "tabUsers", component: TabellaUtentiComponent },
+  { path: "tabForn", component: TabellaFornitoriComponent },
+  { path: "", component: HomeComponent },
+  { path: "marca", component: FormMarcaComponent },
+  { path: "categoria", component: FormCategoriaComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
