@@ -1,3 +1,44 @@
 .centroTre{
   text-align: center;
 }
+
+.barraCerca {
+  width: 100%;
+}
+
+.btnC {
+  padding-right: 180px;
+  padding-left: 180px;
+}
+
+.cerca {
+  padding-right: 180px;
+  width: 70%;
+}
+
+.container {
+  background: #e3e3e3;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 10%;
+}
+
+.bottoniT {
+  padding-right: 300px;
+  width: 10%;
+  display: flex;
+  margin-left: 370px;
+  margin-right: 50px;
+}
+
+.img > li{
+  width: 30%;
+  height: 300px;
+  display: inline-block;
+  background-color: black;
+}
