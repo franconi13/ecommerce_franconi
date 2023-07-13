@@ -45,7 +45,7 @@
         <div class="w-100"></div>
         <div class="col">
           <label for="telAziendale" class="form-label">Telefono Aziendale</label>
-          <input type="number" class="form-control" name="telAziendale" id="telAziendale"
+          <input type="text" class="form-control" name="telAziendale" id="telAziendale"
             placeholder="Telefono Aziendale" onclick="resetMessage()" [(ngModel)]="fornitore.telAziendale" />
           <br />
         </div>
@@ -53,6 +53,24 @@
           <label for="pec" class="form-label">PEC</label>
           <input type="text" class="form-control" name="pec" id="pec" placeholder="Pec" onclick="resetMessage()"
             [(ngModel)]="fornitore.pec"/>
+        </div>
+        <br />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="w-100"></div>
+        <div class="col">
+          <label for="cellFornitore" class="form-label">Cellulare</label>
+          <input type="text" class="form-control" name="cellFornitore" id="cellFornitore"
+            placeholder="Cellulare" onclick="resetMessage()" [(ngModel)]="fornitore.cellFornitore" />
+          <br />
+        </div>
+        <div class="col">
+          <label for="codiceFatturazione" class="form-label">Codice fatturazione</label>
+          <input type="text" class="form-control" name="codiceFatturazione" id="codiceFatturazione" placeholder="Codice fatturazione" onclick="resetMessage()"
+            [(ngModel)]="fornitore.codiceFatturazione"/>
         </div>
         <br />
       </div>
